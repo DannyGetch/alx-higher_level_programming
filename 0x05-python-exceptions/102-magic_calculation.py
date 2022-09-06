@@ -1,4 +1,11 @@
 #!/usr/bin/python3
-def magic_calculation(a, b):
-    result = 0
-    return result
+from __future__ import print_function
+import sys
+
+
+def safe_function(fct, *args):
+    try:
+        return fct(*args)
+    except Exception as e:
+        print("Exception: {}".format(e), file=sys.stderr)
+        return None
